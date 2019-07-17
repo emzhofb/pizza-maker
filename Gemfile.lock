@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    pizza_maker (0.1.0)
+    pizza_maker (0.0.1)
 
 GEM
   remote: https://rubygems.org/
