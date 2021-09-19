@@ -25,6 +25,22 @@ module PizzaMaker
 
     def add_crust(crust)
       crust
+      price
+
+      case crust
+        when "Pan"
+          price = 0
+        when "Cheesy Bites"
+          price = 15000
+        when "Crown Crust"
+          price = 15000
+        else
+          price = 0
+      end
+
+      @crust_cost = price
+
+      return price
     end
 
     def add_toping(toping)
@@ -32,7 +48,15 @@ module PizzaMaker
     end
 
     def price
-      return @size_cost
+      total_price = 0
+      if @size_cost
+        total_price += @size_cost
+      end
+      if @crust_cost
+        total_price += @crust_cost
+      end
+
+      return total_price
     end
   end
 end
