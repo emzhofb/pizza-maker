@@ -45,6 +45,24 @@ module PizzaMaker
 
     def add_toping(toping)
       toping
+      price
+
+      case toping
+        when "None"
+          price = 0
+        when "Cheese"
+          price = 15000
+        when "Beef"
+          price = 20000
+        when "Sausage"
+          price = 15000
+        else
+          price = 0
+      end
+
+      @toping_cost = price
+
+      return price
     end
 
     def price
@@ -54,6 +72,9 @@ module PizzaMaker
       end
       if @crust_cost
         total_price += @crust_cost
+      end
+      if @toping_cost
+        total_price += @toping_cost
       end
 
       return total_price
