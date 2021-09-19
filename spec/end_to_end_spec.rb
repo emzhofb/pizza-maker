@@ -11,7 +11,7 @@ RSpec.describe "End to end spec" do
       large_crown.add_toping("Cheese")
 
       order = PizzaMaker::Order.new
-      order.add_pizza(small_cheese)
+      order.add_pizza(medium_cheese)
       order.add_pizza(large_crown)
 
       expect(order.price).to eq(245_000)
